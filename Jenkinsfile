@@ -12,11 +12,17 @@ pipeline {
 			}
 		}
 		stage("Deploy the docker compose to uat envrionment"){
+			when{
+				branch 'uat'
+			}
 			steps{
 				sh 'echo "deploy on uat swarm cluster"'
 			}
 		}
 		stage("Deploy the docker compose on Prod environment"){
+			when{
+				branch 'main'
+			}
 			steps{
 				sh 'echo "deploy on Prod swarm cluster"'
 			}
