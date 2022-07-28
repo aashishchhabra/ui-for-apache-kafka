@@ -11,6 +11,14 @@ pipeline {
 				sh 'echo "I will be creating a script that will be creating the docker compose file on runtime for multiple cluster setup"'
 			}
 		}
+		stage("Deploy the docker compose to local environment"){
+			when{
+				branch 'dev'
+			}
+			steps{
+				sh 'echo "docker compose up -d" on localhost'
+			}
+		}
 		stage("Deploy the docker compose to uat envrionment"){
 			when{
 				branch 'uat'
