@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage("Pull the latest image"){
 			steps{
-				sh 'docker pull provectuslabs/kafka-ui'
+				sh '/usr/local/bin/docker pull provectuslabs/kafka-ui'
 			}
 		}
 		stage("create docker compose file with all environments provided"){
@@ -16,8 +16,8 @@ pipeline {
 				branch 'dev'
 			}
 			steps{
-				sh 'docker compose down --rmi all'
-				sh 'docker compose up -d'
+				sh '/usr/local/bin/docker compose down --rmi all'
+				sh '/usr/local/bin/docker compose up -d'
 			}
 		}
 		stage("Deploy the docker compose to uat envrionment"){
