@@ -8,7 +8,7 @@ pipeline {
 		}
 		stage("create docker compose file with all environments provided"){
 			steps{
-				sh 'echo "I will be creating a script that will be creating the docker compose file on runtime for multiple cluster setup"'
+				sh 'echo "I will be creating a script that will be creating the docker compose file on runtime for multi cluster setup"'
 			}
 		}
 		stage("Deploy the docker compose to local environment"){
