@@ -23,7 +23,6 @@ pipeline {
 		stage("Deploy the docker compose to uat envrionment"){
 			when{
 				branch 'uat'
-				agent any
 			}
 			steps{
 				sh 'echo "deploy on uat swarm cluster"'
