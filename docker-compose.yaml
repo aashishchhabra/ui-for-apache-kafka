@@ -6,6 +6,12 @@ services:
   kafka-ui:
     container_name: kafka-ui
     image: provectuslabs/kafka-ui:latest
+    deploy:
+      replicas: 1
+      placement:
+        constraints:
+          - node.role==worker
+      restart_policy: on-failure
     ports:
       - 8888:8080
     environment:

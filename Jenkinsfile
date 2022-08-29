@@ -18,8 +18,7 @@ pipeline {
 				branch 'dev'
 			}
 			steps{
-				sh '/usr/local/bin/docker compose down --rmi all'
-				sh '/usr/local/bin/docker compose up -d'
+				sh '/usr/local/bin/docker stack deploy --compose-file docker-compose.yml --resolve-image=always'
 			}
 		}
 		stage("Deploy the docker compose to uat envrionment"){
