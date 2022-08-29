@@ -1,6 +1,6 @@
 pipeline {
 	agent {
-		label 'swarm_manager_1' || 'swarm_manager_2'
+		label 'swarm_manager_1 || swarm_manager_2'
 	}
 	stages {
 		stage("Pull the latest image"){
