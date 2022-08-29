@@ -18,7 +18,7 @@ pipeline {
 				branch 'dev'
 			}
 			steps{
-				sh '/usr/local/bin/docker stack deploy --compose-file docker-compose.yml --resolve-image=always'
+				sh '/usr/local/bin/docker stack deploy --compose-file docker-compose.yaml --resolve-image=always'
 			}
 		}
 		stage("Deploy the docker compose to uat envrionment"){
