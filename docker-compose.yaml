@@ -8,9 +8,6 @@ services:
     image: provectuslabs/kafka-ui:latest
     ports:
       - 8080:8080
-    depends_on:
-      - zookeeper
-      - kafka
     environment:
       KAFKA_CLUSTERS_0_NAME: local
       SERVER_SERVLET_CONTEXT_PATH: "/kafkaui"
